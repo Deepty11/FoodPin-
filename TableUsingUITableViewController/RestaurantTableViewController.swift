@@ -40,6 +40,8 @@ class RestaurantTableViewController: UITableViewController {
         return 1
     }
 
+    
+    //UITableViewController protocol
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return restaurantNames.count
@@ -67,6 +69,18 @@ class RestaurantTableViewController: UITableViewController {
         }
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            restaurantIsChecked.remove(at: indexPath.row)
+            restaurantNames.remove(at: indexPath.row)
+            restaurantImages.remove(at: indexPath.row)
+            restaurantTypes.remove(at: indexPath.row)
+            restaurantLocations.remove(at: indexPath.row)
+        }
+//        tableView.reloadData()
+        tableView.deleteRows(at: [indexPath], with: .fade)
     }
     
     
