@@ -71,18 +71,52 @@ class RestaurantTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete{
-            restaurantIsChecked.remove(at: indexPath.row)
-            restaurantNames.remove(at: indexPath.row)
-            restaurantImages.remove(at: indexPath.row)
-            restaurantTypes.remove(at: indexPath.row)
-            restaurantLocations.remove(at: indexPath.row)
-        }
-//        tableView.reloadData()
-        tableView.deleteRows(at: [indexPath], with: .fade)
-    }
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete{
+//            restaurantIsChecked.remove(at: indexPath.row)
+//            restaurantNames.remove(at: indexPath.row)
+//            restaurantImages.remove(at: indexPath.row)
+//            restaurantTypes.remove(at: indexPath.row)
+//            restaurantLocations.remove(at: indexPath.row)
+//        }
+////        tableView.reloadData()
+//        tableView.deleteRows(at: [indexPath], with: .fade)
+//    }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        //shareAction
+      
+        let shareAction = UIContextualAction(style: .normal, title: "Share", handler: {
+            (action, view, boolValue)-> Void in
+            let defaultText = "Just Checking in " + self.restaurantNames[indexPath.row]
+            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            self.present(activityController, animated: true, completion: nil)
+        })
+        
+        //deleteAction
+        let deleteAction = UIContextualAction(style: .normal, title: "Delete", handler: {
+            (action, view, boolValue)-> Void in
+            self.restaurantNames.remove(at: indexPath.row)
+            self.restaurantImages.remove(at: indexPath.row)
+            self.restaurantLocations.remove(at: indexPath.row)
+            self.restaurantTypes.remove(at: indexPath.row)
+            
+            tableView.deleteRows(at: [indexPath], with: .fade )
+        })
+        
+        //To set background color for the swipe option
+        //UIColor component values should be within 0 to 1
+        //RGB color values differ from 0 to 255
+        // so to match with the UIColor, the RGB color values should be divided by 255
+        // in order to match it in between the range 0 to 1
+        shareAction.backgroundColor = UIColor(red: 48.0/255.0, green: 173.0/255.0, blue: 99.0/255.0, alpha: 1.0)
+        
+       
+        // attach background image to delete Option using UIImage
+        deleteAction.image = UIImage(named: "trash")
+        return UISwipeActionsConfiguration(actions: [shareAction, deleteAction])
+    }
     
     
     
