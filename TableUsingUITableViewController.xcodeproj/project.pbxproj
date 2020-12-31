@@ -14,6 +14,7 @@
 		525D2E422599EAAC00BFD05A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525D2E402599EAAC00BFD05A /* LaunchScreen.storyboard */; };
 		525D2E4C2599ED8200BFD05A /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D2E4B2599ED8200BFD05A /* RestaurantTableViewController.swift */; };
 		525D2E4F2599F98C00BFD05A /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D2E4E2599F98C00BFD05A /* RestaurantTableViewCell.swift */; };
+		526D4C34259DBEB9009555A1 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D4C33259DBEB9009555A1 /* RestaurantDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		525D2E432599EAAC00BFD05A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		525D2E4B2599ED8200BFD05A /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		525D2E4E2599F98C00BFD05A /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		526D4C33259DBEB9009555A1 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				525D2E432599EAAC00BFD05A /* Info.plist */,
 				525D2E4B2599ED8200BFD05A /* RestaurantTableViewController.swift */,
 				525D2E4E2599F98C00BFD05A /* RestaurantTableViewCell.swift */,
+				526D4C33259DBEB9009555A1 /* RestaurantDetailViewController.swift */,
 			);
 			path = TableUsingUITableViewController;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				525D2E4F2599F98C00BFD05A /* RestaurantTableViewCell.swift in Sources */,
 				525D2E362599EAA800BFD05A /* AppDelegate.swift in Sources */,
+				526D4C34259DBEB9009555A1 /* RestaurantDetailViewController.swift in Sources */,
 				525D2E382599EAA800BFD05A /* SceneDelegate.swift in Sources */,
 				525D2E4C2599ED8200BFD05A /* RestaurantTableViewController.swift in Sources */,
 			);
